@@ -1,0 +1,27 @@
+<h1>Danh sach thanh pho</h1>
+<a routerLink="/create">Them thanh pho</a>
+<br>
+<table>
+  <tr>
+    <th>Stt</th>
+    <th>Ten thanh pho</th>
+    <th>Dien tich</th>
+    <th>Dan so</th>
+    <th>GDP</th>
+    <th>Mo ta</th>
+    <th>Quoc gia</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let city of cities; index as i">
+    <td>{{i+1}}</td>
+    <td>{{city.name}}</td>
+    <td>{{city.acreage}}</td>
+    <td>{{city.population}}</td>
+    <td>{{city.gdp}}</td>
+    <td>{{city.description}}</td>
+    <td>{{city.country.name}}</td>
+    <td><a [routerLink]="['/edit', city.id]">Sua</a></td>
+    <td><a [routerLink]="['/delete', city.id]">Xoa</a></td>
+  </tr>
+</table>

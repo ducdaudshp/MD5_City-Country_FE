@@ -1,0 +1,48 @@
+<h1>Sua thanh pho</h1>
+<a routerLink="/">List City</a>
+<br>
+<form [formGroup]="cityForm" (ngSubmit)="updateCity()">
+  <input type="hidden" id="id" formControlName="id">
+  <div>
+    <label for="name">Ten thanh pho</label>
+    <input type="text" id="name" formControlName="name">
+  </div>
+  <div *ngIf="nameControl.touched && nameControl.invalid">
+    <p style="color: red" *ngIf="nameControl.errors?.required">Truong nay bat buoc phai nhap</p>
+  </div>
+  <br>
+  <div>
+    <label for="acreage">Dien tich</label>
+    <input type="text" id="acreage" formControlName="acreage">
+  </div>
+  <br>
+  <div>
+    <label for="population">Dan so</label>
+    <input type="text" id="population" formControlName="population">
+  </div>
+  <br>
+  <div>
+    <label for="gdp">GDP</label>
+    <input type="text" id="gdp" formControlName="gdp">
+  </div>
+  <br>
+  <div>
+    <label for="description">Mo ta</label>
+    <input type="text" id="description" formControlName="description">
+  </div>
+  <br>
+  <div>
+    <label for="country">Quoc gia</label>
+    <select id="country" formControlName="country">
+      <option [ngValue]="null" >Chon danh muc</option>
+      <ng-container *ngFor="let country of countries">
+        <option [value]="country.id">{{country.name}}</option>
+      </ng-container>
+    </select>
+  </div>
+  <br>
+  <div>
+    <button>Sua</button>
+  </div>
+</form>
+

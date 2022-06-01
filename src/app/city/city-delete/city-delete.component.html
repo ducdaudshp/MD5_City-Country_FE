@@ -1,0 +1,33 @@
+
+<h1>Xoa thanh pho</h1>
+<a routerLink="/">Danh sach thanh pho</a>
+<form [formGroup]="cityForm" (ngSubmit)="delete(id)">
+  <input type="hidden" id="id" formControlName="id">
+  <div>
+    <label for="name">Ten thanh pho</label>
+    <input disabled type="text" id="name" formControlName="name">
+  </div>
+  <div>
+    <label for="acreage">Dien tich</label>
+    <input disabled type="text" id="acreage" formControlName="acreage">
+  </div>
+  <div>
+    <label for="population">Dan so</label>
+    <input disabled type="text" id="population" formControlName="population">
+  </div>
+  <div>
+    <label for="gdp">GDP</label>
+    <input disabled type="text" id="gdp" formControlName="gdp">
+  </div>
+  <div>
+    <label for="description">Mo ta</label>
+    <input disabled type="text" id="description" formControlName="description">
+  </div>
+  <div>
+    <label for="country">Thanh pho</label>
+    <input disabled type="text" id="country" formControlName="country">
+  </div>
+  <div>
+    <button>Delete</button>
+  </div>
+</form>
